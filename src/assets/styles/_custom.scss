@@ -1,0 +1,72 @@
+$white:    #fff !default;
+$gray-100: #f3f4f5 !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+// scss-docs-start theme-color-variables
+$primary:       $gray-800;
+$secondary:     $gray-600;
+$body-bg:$gray-100;
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $black,
+  "secondary":  $secondary,
+);
+
+//Typography
+$headings-font-family:"Basier Circle", sans-serif;
+$font-size-base: 1.125rem;
+$font-weight-normal:500;
+$font-weight-light:400;
+$headings-font-weight: $font-weight-normal*1.25;
+$h1-font-size:$font-size-base*3;
+$h2-font-size:$font-size-base*3;
+$font-weight-base: $font-weight-normal;
+$headings-margin-bottom:0rem;
+$paragraph-margin-bottom:0rem;
+
+@media screen and (min-width:1024px) {
+  $h1-font-size: $h1-font-size*2;
+  $font-size-base:$font-size-base*1.5;
+}
+
+//container 
+$grid-gutter-width: 2.5rem;
+$body-text-align: center;
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  xl: 1000px,
+  xxl: 1000px
+) !default;
+
+//Button
+$btn-padding-y: 0.25rem;
+$btn-padding-x: 1rem;
+$btn-border-radius:10px;
+.btn-light{
+  background-color: $white !important;
+
+}
+
+//Navbar
+$navbar-toggler-font-size: $font-size-base*0.75;
+$navbar-light-toggler-border-color: transparent;
+$navbar-light-icon-color:$gray-900;
+$navbar-padding-y: .75rem;
+$navbar-brand-margin-end: 3rem;
+$nav-link-font-size:$font-size-base*.9;
+$nav-link-padding-x: 2.5rem;
+$nav-link-padding-y: .35rem;
+
+//Card
+$card-border-radius: 20px;
+
+//Dropdown

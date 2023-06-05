@@ -1,0 +1,115 @@
+section{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    padding-block: 1.25rem;
+
+    h1,
+    h2{
+        line-height: 40px;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    h1{
+        max-width: 70%;
+        letter-spacing: 0.2px;
+    }
+    h2{
+        max-width: 90%;
+    }
+
+    button{
+        border-radius: 10px;
+    }
+
+    .section-description{
+        display: grid;
+        align-items: center;
+        gap: 1rem;
+        padding-block: 1.25rem;
+    }
+}
+
+.container{
+    display: grid;
+    row-gap: 2.25em;
+    max-width: 1000px !important;
+}
+
+
+@media screen and (min-width:1024px) {
+    section{
+        h1{
+            line-height: 90px;
+            font-size: 96px;
+        }
+        h2{
+            line-height: 72px;
+            font-size: 60px;
+        }
+        p{
+            font-size: 20px;
+            max-width: 50%;
+        }
+    }
+    .hero-img{
+        position: absolute;
+        z-index: -1;
+    }
+    .hero{
+        padding-block: 120px;
+        gap: 1.5rem;
+        min-height: 600px;
+    }
+}
+
+
+.navbar{
+    border-bottom: 1px solid rgb(223, 227, 231, .4);
+    background: rgba(234, 237, 240, 0.5);
+    backdrop-filter: blur(10px) saturate(100%);
+    
+    h2{
+        font-size: 34px;
+    }
+    .nav-link{
+        margin-right: .75rem;
+        border-radius: 10px;
+    }
+
+    .nav-link:hover{
+        background-color: $white;
+    }
+}
+
+section:not(.hero){
+    .card{
+        
+        background-color: lightblue;
+        border: none;
+        text-decoration: none;
+        color: white;
+        text-align: left;
+        border-radius: 20px;
+        max-width: fit-content;
+        overflow: hidden;        
+    }
+    .card-body{
+        padding: 2rem;
+    }
+    .card-img{
+        transition: transform .3s ease-in-out;
+        transition: transform-origin .3s;
+    }
+
+    .card:hover{
+        .card-img{
+            transform-origin: right top;
+            transform: scale(1.1);
+
+           
+        }
+    }
+}
