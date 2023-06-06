@@ -1,104 +1,105 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="#">
-      <h2>Revolut</h2>
-    </a>
+    <a class="navbar-brand" href="#">Navbar</a>
     <button
       class="navbar-toggler d-lg-none"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#collapsibleNavId"
-      aria-controls="collapsibleNavId"
-      aria-expanded="false"
+      (click)="collapse.toggle()"
+      [attr.aria-expanded]="!isCollapsed"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-        <!-- <li class="nav-item dropdown">
+    <div
+      class="collapse navbar-collapse"
+      #collapse="ngbCollapse"
+      [(ngbCollapse)]="isCollapsed"
+    >
+      <ul
+        class="navbar-nav nav-tabs flex-row me-auto mt-2 mt-lg-0"
+        ngbNav
+        #nav="ngbNav"
+        [(activeId)]="active"
+        role="list"
+      >
+        <li class="nav-item">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link"
             href="#"
-            id="dropdownId-1"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Personal</a
-          >
-          <div class="dropdown-menu" aria-labelledby="dropdownId-1">
-            <a class="dropdown-item" href="#">Action 1</a>
-            <a class="dropdown-item" href="#">Action 2</a>
+            aria-current="page"
+            (mouseenter)="myDrop.open()"
+            (mouseleave)="myDrop.close()"
+            >Personal
+          </a>
+          <div #myDrop="ngbDropdown" ngbDropdown class="d-block d-lg">
+            <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
+              <button class="dropdown-item">Action - 1</button>
+              <button class="dropdown-item">Action - 2</button>
+            </div>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="dropdownId-2"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Business</a
-          >
-          <div class="dropdown-menu" aria-labelledby="dropdownId-2">
-            <a class="dropdown-item" href="#">Action 1</a>
-            <a class="dropdown-item" href="#">Action 2</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Business</a>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="dropdownId-3"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Revolut</a
-          >
-          <div class="dropdown-menu" aria-labelledby="dropdownId-3">
-            <a class="dropdown-item" href="#">Action 1</a>
-            <a class="dropdown-item" href="#">Action 2</a>
-          </div>
+        <li [ngbNavItem]="1" class="nav-item">
+          <button ngbNavLink>One</button>
+          <ng-template ngbNavContent>
+            <p>
+              Raw denim you probably haven't heard of them jean shorts Austin.
+              Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+              Mustache cliche tempor, williamsburg carles vegan helvetica.
+              Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby
+              sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
+              placeat salvia cillum iphone. Seitan aliquip quis cardigan
+              american apparel, butcher voluptate nisi qui.
+            </p>
+          </ng-template>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="dropdownId-4"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Company</a
-          >
-          <div class="dropdown-menu" aria-labelledby="dropdownId-4">
-            <a class="dropdown-item" href="#">Action 1</a>
-            <a class="dropdown-item" href="#">Action 2</a>
-          </div>
-        </li> -->
-        <a
-          class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown"
-          href="#"
-          role="button"
-          aria-expanded="false"
-          >Dropdown</a
-        >
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
+        <li [ngbNavItem]="2" class="nav-item">
+          <button ngbNavLink>Two</button>
+          <ng-template ngbNavContent>
+            <p>
+              Exercitation +1 labore velit, blog sartorial PBR leggings next
+              level wes anderson artisan four loko farm-to-table craft beer
+              twee. Qui photo booth letterpress, commodo enim craft beer mlkshk
+              aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud
+              organic, assumenda labore aesthetic magna delectus mollit. Keytar
+              helvetica VHS salvia yr, vero magna velit sapiente labore
+              stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
+              sustainable jean shorts beard ut DIY ethical culpa terry
+              richardson biodiesel. Art party scenester stumptown, tumblr
+              butcher vero sint qui sapiente accusamus tattooed echo park.
+            </p>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="3" class="nav-item">
+          <button ngbNavLink>Three</button>
+          <ng-template ngbNavContent>
+            <p>
+              Sed commodo, leo at suscipit dictum, quam est porttitor sapien,
+              eget sodales nibh elit id diam. Nulla facilisi. Donec egestas
+              ligula vitae odio interdum aliquet. Duis lectus turpis, luctus
+              eget tincidunt eu, congue et odio. Duis pharetra et nisl at
+              faucibus. Quisque luctus pulvinar arcu, et molestie lectus
+              ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat
+              volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
+              nisl enim, nec tristique ipsum euismod facilisis. Morbi ut
+              bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
+              magnis dis parturient montes, nascetur ridiculus mus. Mauris
+              aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus
+              nec tortor vel tellus pulvinar feugiat.
+            </p>
+          </ng-template>
+        </li>
       </ul>
 
-      <button class="btn btn-light my-2 my-sm-0 me-2" type="button">
-        Login
-      </button>
-      <button class="btn btn-primary my-2 my-sm-0" type="button">
-        Sign up
-      </button>
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+      <form class="d-flex my-2 my-lg-0">
+        <input class="form-control me-sm-2" type="text" placeholder="Search" />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
     </div>
   </div>
 </nav>

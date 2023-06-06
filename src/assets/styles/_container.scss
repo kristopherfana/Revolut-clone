@@ -79,7 +79,7 @@ section{
         border-radius: 10px;
     }
 
-    .nav-link:hover{
+    .nav-link:hover, .nav-link:active, .nav-link .active{
         background-color: $white;
     }
 }

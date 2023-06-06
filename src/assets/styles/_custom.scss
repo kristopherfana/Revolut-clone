@@ -44,7 +44,7 @@ $body-text-align: center;
 // scss-docs-start container-max-widths
 $container-max-widths: (
   xl: 1000px,
-  xxl: 1000px
+  xxl: 1001px
 ) !default;
 
 //Button
@@ -70,3 +70,4 @@ $nav-link-padding-y: .35rem;
 $card-border-radius: 20px;
 
 //Dropdown
+$enable-caret:false;

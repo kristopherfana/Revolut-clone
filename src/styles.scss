@@ -1,8 +1,9 @@
 @import '../src/assets/styles/style.scss';
-@import '../node_modules/bootstrap/scss/bootstrap';
-@import '../node_modules/bootstrap/scss/mixins/buttons';
 
 :root{
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '../node_modules/bootstrap/scss/bootstrap';
